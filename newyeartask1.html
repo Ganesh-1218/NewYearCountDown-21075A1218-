@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Christmas Countdown</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            text-align: center;
+        }
+
+        #countdown-container {
+            margin-top: 150px;
+        }
+
+        #countdown {
+            font-size: 3em;
+            color: #c70039;
+            margin: 20px 0;
+        }
+
+        #countdown p {
+            font-size: 1.5em;
+            margin: 0;
+            color: aliceblue;
+        }
+
+        video {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            /* height: 100%; */
+            z-index: -1;
+            filter: blur(2px);
+        }
+    </style>
+</head>
+<body>
+<!--
+<img src="https://gallery.yopriceville.com/var/albums/Free-Clipart-Pictures/Christmas-PNG/Christmas_Decoration_PNG_Clip_Art.png?m=1512532502.jpg" alt="Christmas Background" id="background-image">-->
+<video loop="" autoplay="" src="./pexels-nicole-michalou-5754881 (2160p).mp4" ></video>
+
+<div id="countdown-container">
+    <h1>NEW YEAR COUNTDOWN INDIA</h1>
+    <div id="countdown"></div>
+    <p>Days | Hours | Minutes | Seconds</p>
+</div>
+
+<script>
+    // Set the date for Christmas (Indian Standard Time)
+    const christmasDate = new Date('January 1, 2024 00:00:00 GMT+0530');
+
+    // Function to update the countdown
+    function updateCountdown() {
+        const currentDate = new Date();
+        const timeDifference = christmasDate - currentDate;
+
+        if (timeDifference > 0) {
+            const days = Math.floor(timeDifference / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((timeDifference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((timeDifference % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((timeDifference % (1000 * 60)) / 1000);
+
+            document.getElementById('countdown').innerHTML = `${days} : ${hours} : ${minutes} : ${seconds}`;
+        } else {
+            document.getElementById('countdown').innerHTML = 'Merry Christmas!';
+        }
+    }
+
+    // Initial call to update countdown
+    updateCountdown();
+
+    // Update the countdown every second
+    setInterval(updateCountdown, 1000);
+</script>
+
+</body>
+</html>
