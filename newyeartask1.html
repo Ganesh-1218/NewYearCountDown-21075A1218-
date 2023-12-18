@@ -51,10 +51,8 @@
 </div>
 
 <script>
-    // Set the date for Christmas (Indian Standard Time)
     const christmasDate = new Date('January 1, 2024 00:00:00 GMT+0530');
-
-    // Function to update the countdown
+    
     function updateCountdown() {
         const currentDate = new Date();
         const timeDifference = christmasDate - currentDate;
@@ -71,10 +69,8 @@
         }
     }
 
-    // Initial call to update countdown
     updateCountdown();
 
-    // Update the countdown every second
     setInterval(updateCountdown, 1000);
 </script>
 
